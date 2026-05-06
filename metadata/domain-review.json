@@ -1,0 +1,73 @@
+{
+  "repo": "summit-net-tls-hub",
+  "language": "TypeScript",
+  "category": "Networking",
+  "goal": "Design a TypeScript verification harness for tls systems, covering format conversion, round-trip fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "packet span",
+      "retry pressure",
+      "route drift",
+      "socket risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "packet span",
+      "signal": 67,
+      "slack": 24,
+      "drag": 21,
+      "confidence": 51,
+      "score": 146,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "retry pressure",
+      "signal": 77,
+      "slack": 33,
+      "drag": 21,
+      "confidence": 84,
+      "score": 208,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "route drift",
+      "signal": 55,
+      "slack": 53,
+      "drag": 30,
+      "confidence": 92,
+      "score": 165,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "socket risk",
+      "signal": 60,
+      "slack": 26,
+      "drag": 9,
+      "confidence": 56,
+      "score": 175,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "packet span",
+      "signal": 89,
+      "slack": 44,
+      "drag": 25,
+      "confidence": 47,
+      "score": 194,
+      "lane": "ship"
+    }
+  ]
+}
